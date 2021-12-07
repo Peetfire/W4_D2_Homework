@@ -4,3 +4,4 @@ class Staff:
         self.start_date = start_date
         self.department = department
         self.performance = performance
+        self.id = id
