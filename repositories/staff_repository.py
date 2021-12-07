@@ -14,8 +14,8 @@ def save(person):
 def delete_all():
     sql = "DELETE FROM staff" 
     run_sql(sql)
-    sql = "DBCC CHECKIDENT ('staff', RESEED, 0)"
-    run_sql(sql)
+    # sql = "DBCC CHECKIDENT ('staff', RESEED, 0)"
+    # run_sql(sql)
 
 def select_all():
     staff = []
