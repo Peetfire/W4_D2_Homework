@@ -4,12 +4,12 @@ from models.staff import Staff
 
 import repositories.staff_repository as staff_repository
 
-def save(staff):
-    sql = "INSERT INTO staff (name, start_date, department, performance) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [staff.name, staff.start_date, staff.department, staff.performance]
+def save(person):
+    sql = "INSERT INTO staff (name, start_date, department, performance) VALUES ( %s, %s, %s, %s) RETURNING *"
+    values = [person.name, person.start_date, person.department, person.performance]
     results = run_sql(sql, values)
-    staff.id = results[0]['id']
-    return staff
+    person.id = results[0]['id']
+    return person
 
 def select_all():
     staff = []
